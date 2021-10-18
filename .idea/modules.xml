@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BinarySearch2D/BinarySearch2D.iml" filepath="$PROJECT_DIR$/BinarySearch2D/BinarySearch2D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DSA-FULL.iml" filepath="$PROJECT_DIR$/.idea/DSA-FULL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RecursionJava/RecursionJava.iml" filepath="$PROJECT_DIR$/RecursionJava/RecursionJava.iml" />
+    </modules>
+  </component>
+</project>
