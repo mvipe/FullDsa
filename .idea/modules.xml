@@ -3,7 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BinarySearch2D/BinarySearch2D.iml" filepath="$PROJECT_DIR$/BinarySearch2D/BinarySearch2D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Collections/Collections.iml" filepath="$PROJECT_DIR$/Collections/Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Comparing/Comparing.iml" filepath="$PROJECT_DIR$/Comparing/Comparing.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA-FULL.iml" filepath="$PROJECT_DIR$/.idea/DSA-FULL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataStructures/DataStructures.iml" filepath="$PROJECT_DIR$/DataStructures/DataStructures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExceptionHandling/ExceptionHandling.iml" filepath="$PROJECT_DIR$/ExceptionHandling/ExceptionHandling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Generics/Generics.iml" filepath="$PROJECT_DIR$/Generics/Generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MathsForDsa/MathsForDsa.iml" filepath="$PROJECT_DIR$/MathsForDsa/MathsForDsa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOPS/OOPS.iml" filepath="$PROJECT_DIR$/OOPS/OOPS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ObjectCloning/ObjectCloning.iml" filepath="$PROJECT_DIR$/ObjectCloning/ObjectCloning.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecursionJava/RecursionJava.iml" filepath="$PROJECT_DIR$/RecursionJava/RecursionJava.iml" />
     </modules>
   </component>
