@@ -1,9 +1,9 @@
 package LinkedList;
 public class LL {
 
-    private Node head;
-    private Node tail;
-    private int size;
+    public Node head;
+    public Node tail;
+    public int size;
 
     public LL() {
         this.size = 0;
@@ -50,6 +50,32 @@ public class LL {
         temp.next = node;
 
         size++;
+    }
+
+    //insert using recursion
+
+    public void insertUsingRecursion(int val, int index){
+        head=insertUsingRec(val,index,head);
+        if(tail==null){
+            tail=head;
+        }
+    }
+    private Node insertUsingRec(int val, int index,Node befNode){
+
+        if(index==0){
+            Node newNod=new Node(val);
+            newNod.next=befNode;
+            size++;
+            return newNod;
+        }
+
+
+        befNode.next=insertUsingRec(val,index-1,befNode.next);
+
+        return befNode;
+
+
+
     }
 
 
@@ -120,12 +146,16 @@ public class LL {
         System.out.println("END");
     }
 
-    private class Node {
+    public class Node {
         private int value;
-        private Node next;
+        public Node next;
 
         public Node(int value) {
             this.value = value;
+        }
+
+        public int getValue() {
+            return value;
         }
 
         public Node(int value, Node next) {
