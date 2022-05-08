@@ -146,6 +146,43 @@ public class LL {
         System.out.println("END");
     }
 
+    //reversive linked list using recursion
+    public void reverseRecursive(Node node){
+        if(node==tail){
+            head=tail;
+            return;
+        }
+
+        reverseRecursive(node.next);
+
+        tail.next=node;
+        tail=node;
+        tail.next=null;
+    }
+
+    //iterative approach to reverse linked list
+    //inplace reversal
+    public void reverse(){
+        if(size<2){
+            return;
+        }
+
+        Node prev=null;
+        Node present=head;
+        Node next=present.next;
+
+        while(present!=null){
+            present.next=prev;
+            prev=present;
+            present=next;
+            if(next!=null){
+                next=next.next;
+            }
+        }
+
+        head=prev;
+    }
+
     public class Node {
         private int value;
         public Node next;

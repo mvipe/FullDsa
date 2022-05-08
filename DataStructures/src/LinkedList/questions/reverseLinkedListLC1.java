@@ -4,122 +4,95 @@ import LinkedList.LL;
 
 public class reverseLinkedListLC1 {
     public static void main(String[] args) {
-        ListNode listNode=new ListNode(3);
-        ListNode node1=new ListNode(4);
-        ListNode node2=new ListNode(9);
-        ListNode node3=new ListNode(7);
-        ListNode node4=new ListNode(6);
+        ListNode listNode=new ListNode(1);
+        ListNode node1=new ListNode(2);
+        ListNode node2=new ListNode(2);
+        ListNode node3=new ListNode(1);
+        ListNode node4=new ListNode(1);
 
         ListNode temp=listNode;
         temp.next=node1;
         node1.next=node2;
         node2.next=node3;
         node3.next=node4;
-        display(temp);
-        ListNode reverseList=reverse2(temp);
-       display(reverseList);
+
+        System.out.println(isPalindrome(temp));
+//        display(temp);
+//        ListNode reverseList=reverseBetween(temp,4,7);
+//       display(reverseList);
     }
 
-    static ListNode reverse2(ListNode head){
-        if(head==null || head.next==null){
-            return head;
-        }
-        ListNode prev=null;
-        ListNode pres=head;
-        ListNode next=head.next;
-
-        while(next!=null){
-
-            ListNode newPrev=pres;
-            ListNode newPres=pres.next;
-
-            next=next.next;
+    public static boolean isPalindrome(ListNode head) {
 
 
 
-            pres.next=prev;
-
-            prev=newPrev;
-            pres=newPres;
-
-        }
-
-        pres.next=prev;
+        return true;
 
 
-
-        return pres;
     }
-//    static ListNode recursiveReverse(ListNode head){
-//        if()
-//    }
 
-    static ListNode reverse(ListNode head){
+    static int size(ListNode head){
+        ListNode temp=head;
+        int s=0;
 
-        int size=getSize(head);
-        if(size==0 || size==1){
+        while(temp!=null){
+            s++;
+            temp=temp.next;
+        }
+
+        return s;
+    }
+
+
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        if( left==right){
             return head;
         }
 
-        ListNode tempHead=head;
+        //skip the first left-1 nodes
+        ListNode current=head;//current starts from null
+        ListNode prev=null;//prev starts from head
 
+        for (int i = 0; current!=null && i < left-1; i++) {
+            prev=current;
+            current=current.next;
+        }
 
-        ListNode s=head;
-        ListNode e=getNode(size-1,head);
+        ListNode last=prev;
+        ListNode newEnd=current;
 
-        //first swap
-        ListNode prev=getNode(size-2,head);
-        prev.next=s;
-        e.next=s.next;
-        s.next=null;
-
-        tempHead=e;
-
-        s=tempHead.next;
-        e= prev;
-
-        int sInd=1;
-        int eInd=size-2;
-
-        while (sInd<eInd) {
-
-            //case-1 : when start and end is adjacent
-            if(eInd-sInd==1) {
-                s.next = e.next;
-                e.next = s;
-
-                ListNode prevNode=getNode(sInd-1,tempHead);
-                prevNode.next=e;
-                sInd++;
-                eInd--;
-
-                s=getNode(sInd,tempHead);
-                e=getNode(eInd,tempHead);
-
-            }else{
-                ListNode prevStart=getNode(sInd-1,tempHead);
-                ListNode prevEnd=getNode(eInd-1,tempHead);
-
-                ListNode tempStart=s.next;
-
-                prevStart.next=e;
-                s.next=e.next;
-                prevEnd.next=s;
-                e.next=tempStart;
-
-                sInd++;
-                eInd--;
-
-                s=getNode(sInd,tempHead);
-                e=getNode(eInd,tempHead);
-
+        //reverse between left and right
+        ListNode next=current.next;
+        for (int i = 0; current!=null && i < right-left+1; i++) {
+            current.next=prev;
+            prev=current;
+            current=next;
+            if(next!=null){
+                    next=next.next;
             }
-
-
         }
 
-        return tempHead;
+
+        if(last!=null){
+            last.next=prev;
+        }else{
+            head=prev;
+        }
+
+        newEnd.next=current;
+
+        return head;
+
+
+
+
+
     }
+
+
+
+
+
 
     static int getSize(ListNode head){
         ListNode temp=head;

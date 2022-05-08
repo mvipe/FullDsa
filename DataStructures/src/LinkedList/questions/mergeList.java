@@ -23,6 +23,16 @@ public class mergeList {
 
     }
 
+    public void bubbleSort(){
+
+    }
+
+    private void bubbleSort(int row ,int col){
+
+    }
+
+
+
     private static LL mergelist(LL list1, LL list2) {
         Node temp1=list1.head;
         Node temp2=list2.head;
